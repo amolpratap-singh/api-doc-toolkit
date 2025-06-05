@@ -53,10 +53,14 @@ class APIDocumentationGenerator:
         try:
             api_spec_util = APISpecFileUtility(self.api_spec_dir)
             file_list = api_spec_util.get_spec_files()
+            logger.info(f"API specification files found: {file_list}")
+        except FileNotFoundError as e:
+            logger.error(f"API specification directory not found: {e}")
+            return
         except Exception as e:
             logger.error(f"Error retrieving API specification files: {e}")
             return
-        logger.info(f"Found {len(file_list)} API specification files.")
+        logger.info(f"Found {file_list} API specification files.")
 
         #logger.info("API documentation generated successfully.")
 
