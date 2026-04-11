@@ -61,7 +61,11 @@ class APIDocumentationGenerator:
             logger.error(f"Error retrieving API specification files: {e}")
             return
         logger.info(f"Found {file_list} API specification files.")
-
+        
+        # TODO: Mulitple flile processing can be handled later
+        
+        if file_list:
+            logger.info(f"file present here and list are {file_list}")
         #logger.info("API documentation generated successfully.")
 
 
