@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from models.database import get_sampels, delete_samples, save_sample
+from models.database import get_samples, delete_samples, save_sample
 
 samples_bp = Blueprint("samples", __name__)
 
@@ -10,7 +10,7 @@ def list_samples():
     Optional query parameter: ?spec_file=filename.yaml to filter by spec file.
     """
     spec_file = request.args.get("spec_file")
-    return jsonify(get_sampels(spec_file))
+    return jsonify(get_samples(spec_file))
 
 @samples_bp.route("/", methods=["POST"])
 def create_sample():

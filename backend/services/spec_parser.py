@@ -3,7 +3,7 @@ import json
 import yaml
 from pathlib import Path
 
-SPEC_DIR = Path(__file__).parent.parent.parent / "specs"
+SPEC_DIR = Path(__file__).parent.parent.parent / "openapi_specs"
 VALID_EXT = {".json", ".yaml", ".yml"}
 
 def list_specs():

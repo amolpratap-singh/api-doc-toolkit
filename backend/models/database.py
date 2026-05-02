@@ -46,7 +46,7 @@ def save_sample(spec_file, path, method, request_body, response_body, status_cod
         conn.commit()
     conn.close()
     
-def get_sampels(spec_file=None):
+def get_samples(spec_file=None):
     conn = get_db_connection()
     if spec_file:
         rows = conn.execute("SELECT * FROM samples WHERE spec_file = ? ORDER BY created_at DESC", (spec_file,)).fetchall()
